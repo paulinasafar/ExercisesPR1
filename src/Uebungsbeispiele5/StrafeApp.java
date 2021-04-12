@@ -6,13 +6,15 @@ public class StrafeApp {
 
         Strafe strafe1 = new Strafe();
         strafe1.vorname = "John";
-        strafe1.nachname = "Black"";
-        strafe1.kennzeichen = "G987UE";
+        strafe1.nachname = "Black";
+        strafe1.kennzeichen = "G-987-UE";
         strafe1.strafnummer = 12345;
 
-        strafe1.strafe()
+        strafe1.strafe(30);
+        strafe1.alkohol(1.5);
+        strafe1.getStrafe();
+
 
 
     }
-
 }

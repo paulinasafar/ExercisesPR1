@@ -22,7 +22,7 @@ public class Strafe {
         } else if (geschwindigkeitsueberschreitung <= 100) {
             strafe += 500;
             anzahl += 1;
-        } else if (geschwindigkeitsueberschreitung) {
+        } else if (geschwindigkeitsueberschreitung > 100) {
             strafe += 1500;
             anzahl += 1;
         }
@@ -49,13 +49,15 @@ public class Strafe {
         }
             public double getStrafe() {
             if (anzahl == 1) {
-                strafe = strafe * 0,7;}
+                strafe = strafe * 0.7;
+                System.out.println("The ticket amount is " + strafe + " EUR.");}
             else if (anzahl == 2) {
-                strafe = strafe * 0,8;}
+                strafe = strafe * 0.8;
+                System.out.println("The ticket amount is " + strafe + " EUR.");}
             else if (anzahl == 3) {
-                strafe = strafe * 0,9;}
+                strafe = strafe * 0.9;
+                System.out.println("The ticket amount is " + strafe + " EUR.");}
             else {strafe = strafe * 1;
-            }
+                System.out.println("The ticket amount is " + strafe + " EUR.");}
             return strafe;}
-
 }
