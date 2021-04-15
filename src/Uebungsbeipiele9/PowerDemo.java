@@ -27,10 +27,17 @@ public class PowerDemo {
 
     //Methode C
     public static int powerSimple3(int x, int n) {
-        int result = 1;
-        return x * powerSimple3(x, n-1);
+
+        if (n > 0) {
+            return x * powerSimple3(x, n - 1);
+        } else {
+            return 1;
+        }
     }
     //Methode D
-
+//    public static int powerSimple4(int x, int n) {
+//
+//
+//    }
 
 }
