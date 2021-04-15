@@ -8,7 +8,7 @@ public class LuckyLooserDemo {
         String[] array1 = {"Rosa", "Vicky", "John", "Matilda", "Peter", "Franz"};
         String[] array2 = {"Matilda", "Leni", "Ibrahim", "Dominic", "Franz", "Marco", "Anna"};
 
-        System.out.println(Arrays.toString(getLoosers(array1, array2)));
+        System.out.println("Lucky Loosers are: " + Arrays.toString(getLoosers(array1, array2)));
 
     }
 
