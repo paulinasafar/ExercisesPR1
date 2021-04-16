@@ -23,7 +23,7 @@ public class Erdbeerland {
         System.out.println("The indexes of ripe berries in the cup are: " + Arrays.toString(fülleBecher(KLASSIFIZIERUNG, 1)));
         System.out.println("The indexes of ripe berries in the cup are: " + Arrays.toString(fülleBecher(KLASSIFIZIERUNG, 2)));
         int[] becherFüllung = {1, 6, 9, 16, 17, 19, 20, 21, 23, 25};
-        //System.out.println("The weight of the cup is: " + becherNettoGewicht(GEWICHTE, becherFüllung));
+        System.out.println("The weight of the cup is: " + becherNettoGewicht(GEWICHTE, becherFüllung));
 
     }
 
@@ -101,13 +101,11 @@ public class Erdbeerland {
         return becherFüllung; // Platzhalter
     }
 
-//    public static double becherNettoGewicht(double[] WEIGHTS, int[] becherFüllung) {
-//            double netWeight = 0;
-//        for (int i = 0; i < becherFüllung.length ; i++) {
-//            if(becherFüllung[i] == WEIGHTS[becherFüllung[i]]) {
-//                netWeight = netWeight + WEIGHTS[becherFüllung[i]];
-//            }
-//        }
-//        return netWeight;
-//    }
-}
+    public static double becherNettoGewicht(double[] WEIGHTS, int[] becherFüllung) {
+            double netWeight = 0;
+        for (int i = 0; i < becherFüllung.length ; i++) {
+                netWeight = netWeight + WEIGHTS[becherFüllung[i]];
+            }
+        return netWeight;}
+    }
+
