@@ -106,6 +106,8 @@ public class Erdbeerland {
         for (int i = 0; i < becherFüllung.length ; i++) {
                 netWeight = netWeight + WEIGHTS[becherFüllung[i]];
             }
+        netWeight = Math.round(netWeight*100);
+        netWeight = netWeight / 100;
         return netWeight;}
     }
 
