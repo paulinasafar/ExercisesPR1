@@ -36,7 +36,7 @@ public class Hundhotel {
         System.out.println("Dog 5: " + dog5.getName());
         System.out.println();
 
-        System.out.println(Arrays.toString(Hund.dogsWithAllergies(dogs, ingredients)));
+        System.out.println("Dogs with allergies: " + Arrays.toString(Hund.dogsWithAllergies(dogs, ingredients)));
 
         }
 
