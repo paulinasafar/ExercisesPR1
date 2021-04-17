@@ -24,8 +24,22 @@ public class Hund {
                 x++;
                 } }
             }
-
         return dogsWithAllergy;}
+
+     public static int[] frequentAllergen(Hund[] dogs, String[] ingredients) {
+        int[] frequentallergen = new int[ingredients.length];
+
+         for (int i = 0; i < ingredients.length; i++) {
+             int counter = 0;
+             for (int j = 0; j < dogs.length; j++) {
+                 frequentallergen[i] = counter;
+                 if(ingredients[i].equals(dogs[j].allergien)) {
+                     counter++;
+                 frequentallergen[i] = counter;
+                 } }
+         }
+         return frequentallergen;}
+
 
     @Override
    public String toString() {

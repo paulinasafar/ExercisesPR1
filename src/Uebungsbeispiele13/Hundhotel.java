@@ -9,6 +9,7 @@ public class Hundhotel {
     public static void main(String[] args) {
 
         String[] ingredients = {"milk", "chicken", "schnitzl", "salt", "pepper", "wallnuts", "potatoes", "soup", "creme"};
+
         Hund dog1 = new Hund("Fido");
         Hund dog2 = new Hund("Fifi");
         Hund dog3 = new Hund("Boris");
@@ -23,10 +24,10 @@ public class Hundhotel {
         dogs[4] = dog5;
 
         dog1.allergien = "wallnuts";
-        dog2.allergien = "chocolade";
+        dog2.allergien = "garlick";
         dog3.allergien = "creme";
         dog4.allergien = "milk";
-        dog5.allergien = "garlick";
+        dog5.allergien = "creme";
 
         for (int i = 0; i < dogs.length; i++) {
             System.out.println(dogs[i]);
@@ -37,6 +38,10 @@ public class Hundhotel {
         System.out.println();
 
         System.out.println("Dogs with allergies: " + Arrays.toString(Hund.dogsWithAllergies(dogs, ingredients)));
+        System.out.println();
+
+        System.out.println("Ingredients as frequent allergies: " + Arrays.toString(Hund.frequentAllergen(dogs, ingredients)));
+        System.out.println();
 
         }
 
