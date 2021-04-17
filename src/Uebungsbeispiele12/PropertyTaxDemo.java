@@ -1,6 +1,4 @@
 package Uebungsbeispiele12;
-
-import javax.swing.plaf.basic.BasicSplitPaneUI;
 import java.util.Arrays;
 
 public class PropertyTaxDemo {
@@ -19,14 +17,15 @@ public class PropertyTaxDemo {
                 {2, 30, 10},
                 {3, 75, 15}};
 
-        int[] kunden1 = {0, 4, 6, 8, 11, 4, 0, 11, 15, 7, 4, 24};
+        int[] kunden1 = {0, 4, 6, 8, 11, 4, 0, 11, 15, 7, 17, 24};
 
         System.out.println(array1.length);
         System.out.println(kunden1.length);
 
         System.out.println("Area Array: " + Arrays.deepToString(calcArea(array1)));
         System.out.println("Array with Taxes: " + Arrays.deepToString(calcTax(array1)));
-        System.out.println("Counter of Clients: " + counterKunden(kunden1));
+        System.out.println(calcClientProperty(array1, kunden1));
+
     }
 
     public static int[][] calcArea(int[][] array1) {
@@ -58,31 +57,27 @@ public class PropertyTaxDemo {
         return array3;
     }
 
-    public static int counterKunden(int[] kunden1) {
-        int counter = 0;
-        int[] kunden3 = new int[kunden1.length];
-
+    public static double calcClientProperty(int[][] array1, int[] kunden1) {
+        double[][] kunden2 = new double[kunden1.length][2];
+        int calcClientTax = 0;
         for (int i = 0; i < kunden1.length; i++) {
-            for (int j = i + 1; j < kunden1.length; j++) {
-                kunden3[i] = kunden1[i];
-                if (kunden3[i] == kunden3[j]) {
-                    kunden3[j] = -1;
+            kunden2[i][0] = kunden1[i];
+            kunden2[i][1] = calcTax(array1)[i][1];
+        }
+        System.out.println("Clients with properties: " + Arrays.deepToString(kunden2));
+
+        for (int i = 0; i < kunden2.length; i++) {
+            for (int j = i + 1; j < kunden2.length; j++) {
+                    if (kunden2[i][0] == kunden2[j][0]) {
+                        kunden2[i][1] += kunden2[j][1];
+                        calcClientTax += kunden2[i][1];
+                        return calcClientTax;
+                    }
+                    }
                 }
-            }
+        return calcClientTax;}
         }
-        for (int j = 0; j < kunden3.length; j++) {
-            if (kunden3[j] >= 0)
-                counter++;
-        }
-        return counter;
-    }
 
-//    public static void calcProperty(int[][] array1, int[] kunden1) {
-//        int[][] kunden2 = new int[counterKunden(kunden1)][2];
-//
-//        for (int i = 0; i <; i++) {
-//
-//        }
-//    }
 
-}
+
+
